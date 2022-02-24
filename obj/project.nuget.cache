@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vw2qKvJ8JqyyTSkBq/FtPmdnkUEZ29WIL4qTDqCHsrHVZVl3nKyAxLEkHMyLvpnbnijolJctkmBPgE2c0p7tXg==",
+  "dgSpecHash": "SH+RZUZFFNlbEzCwnh/15XtTUrZnA80KtqK8qZUtDDTRpCjNrHFtH7vhFx5E8p5m+RqsPINsJrUJ6GkrAgimyw==",
   "success": true,
-  "projectFilePath": "/Users/ldaviesi/Documents/code/music-library/music-library.csproj",
+  "projectFilePath": "/Users/ldaviesi/Documents/code/supersonic/music-library.csproj",
   "expectedPackageFiles": [
     "/Users/ldaviesi/.nuget/packages/microsoft.data.sqlite/6.0.2/microsoft.data.sqlite.6.0.2.nupkg.sha512",
     "/Users/ldaviesi/.nuget/packages/microsoft.data.sqlite.core/6.0.2/microsoft.data.sqlite.core.6.0.2.nupkg.sha512",

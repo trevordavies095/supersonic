@@ -50,6 +50,14 @@ namespace music_library
                 {
                     connection.Open();
 
+                    var artist = "";
+                    if(String.IsNullOrEmpty(tfile.Tag.JoinedAlbumArtists)){
+                        artist = tfile.Tag.JoinedArtists;
+                    }
+                    else {
+                        artist = tfile.Tag.JoinedAlbumArtists;
+                    }
+
                     // Check to see if artist exists
                     var command = connection.CreateCommand();
                     command.CommandText =
@@ -57,7 +65,7 @@ namespace music_library
                         SELECT id
                         FROM artist
                         WHERE name = '$name';
-                    ".Replace("$name", tfile.Tag.JoinedAlbumArtists);
+                    ".Replace("$name", artist);
 
                     using(var reader = command.ExecuteReader())
                     {
@@ -74,10 +82,11 @@ namespace music_library
                         command = connection.CreateCommand();
                         command.CommandText = 
                         @"
-                            INSERT INTO artist VALUES($id, $name);
+                            INSERT INTO artist VALUES($id, $name, $name_sorted);
                         ";
                         command.Parameters.AddWithValue("$id", artist_id);
-                        command.Parameters.AddWithValue("$name", EmptyStringCheck(tfile.Tag.JoinedAlbumArtists));
+                        command.Parameters.AddWithValue("$name", artist);
+                        command.Parameters.AddWithValue("$name_sorted", EmptyStringCheck(tfile.Tag.JoinedPerformersSort));
                         command.ExecuteNonQuery();
                     }
 
@@ -109,6 +118,9 @@ namespace music_library
                     {
                         album_id = Guid.NewGuid().ToString();
 
+                        
+
+
                         command = connection.CreateCommand();
                         command.CommandText = 
                         @"
@@ -129,7 +141,7 @@ namespace music_library
                     command = connection.CreateCommand();
                     command.CommandText = 
                     @"
-                        INSERT INTO track VALUES($id, $album_id, $artist_id, $title, $composer, $grouping, $track_number, $disc_number, $bpm, $comments, $duration);
+                        INSERT INTO track VALUES($id, $album_id, $artist_id, $title, $composer, $grouping, $track_number, $disc_number, $bpm, $comments, $duration, $path);
                     ";
                     command.Parameters.AddWithValue("$id", EmptyStringCheck(track_id));
                     command.Parameters.AddWithValue("$album_id", EmptyStringCheck(album_id));
@@ -142,6 +154,7 @@ namespace music_library
                     command.Parameters.AddWithValue("$bpm", tfile.Tag.BeatsPerMinute);
                     command.Parameters.AddWithValue("$comments", EmptyStringCheck(tfile.Tag.Comment));
                     command.Parameters.AddWithValue("$duration", tfile.Properties.Duration);
+                    command.Parameters.AddWithValue("$path", path);
                     command.ExecuteNonQuery();
 
 

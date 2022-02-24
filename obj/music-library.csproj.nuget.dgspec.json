@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ldaviesi/Documents/code/music-library/music-library.csproj": {}
+    "/Users/ldaviesi/Documents/code/supersonic/music-library.csproj": {}
   },
   "projects": {
-    "/Users/ldaviesi/Documents/code/music-library/music-library.csproj": {
+    "/Users/ldaviesi/Documents/code/supersonic/music-library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ldaviesi/Documents/code/music-library/music-library.csproj",
+        "projectUniqueName": "/Users/ldaviesi/Documents/code/supersonic/music-library.csproj",
         "projectName": "music-library",
-        "projectPath": "/Users/ldaviesi/Documents/code/music-library/music-library.csproj",
+        "projectPath": "/Users/ldaviesi/Documents/code/supersonic/music-library.csproj",
         "packagesPath": "/Users/ldaviesi/.nuget/packages/",
-        "outputPath": "/Users/ldaviesi/Documents/code/music-library/obj/",
+        "outputPath": "/Users/ldaviesi/Documents/code/supersonic/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ldaviesi/.nuget/NuGet/NuGet.Config"
