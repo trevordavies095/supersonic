@@ -1,0 +1,21 @@
+Tags needed
+
+Songs
+    Title
+    Artist
+    Album
+    Album Artist
+    Composer
+    Grouping
+    Genre
+    Year
+    Track
+    Total Tracks
+    Disc
+    Disc Numbers
+    Compilation
+    Rating
+    BPM
+    PLay Count
+    Comments
+    
